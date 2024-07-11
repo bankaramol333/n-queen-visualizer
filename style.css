@@ -66,7 +66,7 @@ div.n-queen {
   position: absolute;
   left: 5%;
   width: 90%;
-  margin: auto;
+  margin: 0 auto;
   top: 4em;
 }
 
@@ -79,3 +79,97 @@ div.n-queen {
   background: linear-gradient(90deg, #e8eddf 60%, #e8eddf 60%);
   outline: none;
 }
+
+.slider::after {
+  content: "SLOW";
+  position: absolute;
+  top: -10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fa7921;
+}
+
+.slider::before {
+  content: "FAST";
+  position: absolute;
+  top: -10px;
+  right: 0px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fa7921;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: -2px;
+  cursor: pointer;
+  background-color: #fa7921;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.slider::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  height: 15px;
+  width: 15px;
+  z-index: 1;
+  color: #ffba08;
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background-color: #fa7921;
+  cursor: pointer;
+  position: relative;
+  top: -2px;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  box-shadow: 0 0 0 2px white, 0 0 0 4px #fa7921;
+}
+
+#progress-bar {
+  width: 60%;
+  height: 7px;
+  background: #ffd200;
+  border-radius: 7px;
+  position: absolute;
+  top: 7px;
+}
+
+.play-button {
+  position: relative;
+  top: 80px;
+  left: 35%;
+  border: none;
+  outline: none;
+  color: #fdfffc;
+  width: 80px;
+  height: 35px;
+  background-color: #f72585;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  /* z-index: 1; */
+}
+
+.play-button:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+.play-button:active {
+  background-color: #fdfffc;
+  color: #f72585;
+  border: 3px solid #f72585;
+  border-color: #f72585;
+}
+

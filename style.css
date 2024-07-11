@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  position: relative;
+  top: -20px;
+  width: 100%;
+  background-color: #011627;
+  color: #fdfffc;
+}
+
+.header h2 {
+  padding: 0.5em;
+}
+
+div.n-queen {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  max-width: 450px;
+}
+
+.inputbox {
+  position: relative;
+  top: 1.5em;
+  bottom: 2em;
+}
+
+.numberbox {
+  width: 100%;
+  font-size: 14px;
+  padding: 4px;
+  border: none;
+  border-bottom: 2px solid #2ec4b6;
+  outline: none;
+  background: transparent;
+}
+
+.inputbox label {
+  position: absolute;
+  top: 4px;
+  left: 0px;
+  color: #2ec4b6;
+  font-size: 14px;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.inputbox input:focus ~ label,
+.inputbox input:disabled ~ label,
+.inputbox input:valid ~ label {
+  top: -9px;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.slider-container {
+  position: absolute;
+  left: 5%;
+  width: 90%;
+  margin: auto;
+  top: 4em;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  margin: 0 auto;
+  height: 7px;
+  border-radius: 7px;
+  background: linear-gradient(90deg, #e8eddf 60%, #e8eddf 60%);
+  outline: none;
+}

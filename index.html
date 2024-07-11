@@ -12,8 +12,35 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
-      <h2>N Queen Visualiser</h2>
+    <header class="header">
+      <h2>
+        N-Queens Visualiser <i class="fas fa-crown" style="color: #fdfffc"></i>
+      </h2>
     </header>
+
+    <div class="n-queen">
+      <div class="inputbox">
+        <input type="number" class="numberbox" id="numberbox" required />
+        <label for="InputHere">Enter Input Here</label>
+      </div>
+      <div class="slider-container">
+        <input
+          type="range"
+          name="slider"
+          id="slider"
+          class="slider"
+          min="0"
+          max="100"
+          value="60"
+        />
+        <div class="progress-bar"></div>
+      </div>
+      <button class="play-button" id="play-button">
+        <i class="fa fa-play" aria-hidden="true"> </i>Play
+      </button>
+    </div>
+    <div class="queen-arrangement" id="queen-arrangement"></div>
+    <div class="n-queen-board"></div>
+    <script src="app.js"></script>
   </body>
 </html>

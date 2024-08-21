@@ -31,6 +31,10 @@ class Queen {
     numberbox.disabled = false;
   };
 
+  delay = async () => {
+    await new Promise((done) => setTimeout(() => done(), speed));
+  };
+
   solveQueen = async (board, r, n) => {
     if (r == n) {
       ++Board;

@@ -37,6 +37,19 @@ class Queen {
     const currentColumn = currentRow.getElementsByTagName("td")[col];
     currentColumn.innerHTML = queen;
     await q.delay();
+    //column check
+    for (let i = r - 1; i >= 0; i--) {
+      const row = table.firstChild.childNodes[i];
+      const column = row.getElementsByTagName("td")[col];
+      const value = column.innerHTML;
+      if (value == queen) {
+        column.style.backgroundColor = "#FB5607";
+        currentColumn.innerHTML = "-";
+        return false;
+      }
+      column.style.backgroundColor = "#ffca3a";
+      await q.delay();
+    }
   };
 
   clearColor = async (board) => {

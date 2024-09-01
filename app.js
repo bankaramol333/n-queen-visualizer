@@ -31,6 +31,19 @@ class Queen {
     numberbox.disabled = false;
   };
 
+  clearColor = async (board) => {
+    for (let j = 0; j < n; ++j) {
+      const table = document.getElementById(`table-${this.uuid[board]}`);
+      const row = table.firstChild.childNodes[j];
+      for (let k = 0; k < n; ++k)
+        (j + k) & 1
+          ? (row.getElementsByTagName("td")[k].style.backgroundColor =
+              "#FF9F1C")
+          : (row.getElementsByTagName("td")[k].style.backgroundColor =
+              "#FCCD90");
+    }
+  };
+
   delay = async () => {
     await new Promise((done) => setTimeout(() => done(), speed));
   };

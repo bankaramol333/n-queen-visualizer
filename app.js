@@ -31,8 +31,16 @@ class Queen {
     numberbox.disabled = false;
   };
 
+  isValid = async (board, r, col, n) => {
+    const table = document.getElementById(`table-${this.uuid[board]}`);
+    const currentRow = table.firstChild.childNodes[r];
+    const currentColumn = currentRow.getElementsByTagName("td")[col];
+    currentColumn.innerHTML = queen;
+    await q.delay();
+  };
+
   clearColor = async (board) => {
-    for (let j = 0; j < n; ++j) {
+    for (let j = 0; j < n; j++) {
       const table = document.getElementById(`table-${this.uuid[board]}`);
       const row = table.firstChild.childNodes[j];
       for (let k = 0; k < n; ++k)

@@ -48,8 +48,7 @@ class Queen {
         return false;
       }
       column.style.backgroundColor = "#ffca3a";
-    
-    
+      await q.delay();
     }
   };
 

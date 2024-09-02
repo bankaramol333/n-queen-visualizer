@@ -50,6 +50,18 @@ class Queen {
       column.style.backgroundColor = "#ffca3a";
       await q.delay();
     }
+    for (let i = r - 1; i >= 0; i--) {
+      const row = table.firstChild.childNodes[i];
+      const column = row.getElementsByTagName("td")[col];
+      const value = column.innerHTML;
+      if (value == queen) {
+        column.style.backgroundColor = "#FB5607";
+        currentColumn.innerHTML = "-";
+        return false;
+      }
+      column.style.backgroundColor = "#ffca3a";
+      await q.delay();
+    }
   };
 
   clearColor = async (board) => {

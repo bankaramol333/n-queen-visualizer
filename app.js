@@ -60,7 +60,7 @@ class Queen {
       if (value == queen) {
         column.style.backgroundColor = "#fb5607";
         currentColumn.innerHTML = "-";
-        return false;
+        return true;
       }
       column.style.backgroundColor = "#ffca3a";
       await q.delay();

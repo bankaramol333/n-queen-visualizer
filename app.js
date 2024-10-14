@@ -12,28 +12,21 @@ let n,
   tempSpeed,
   q,
   Board = 0;
-// Board = 0;
-
-// Creating array for all the possible arrangements of the N-Queen
 let array = [0, 2, 1, 1, 3, 11, 5, 41, 93];
 
-// Used to store the state of the boards;
 let pos = {};
-// let position = {};
 
-// Setting the slider value onSlide
-speed = (100 - slider.value) * 10;
+speed = (100 - slider.value) * 5;
 tempSpeed = speed;
 slider.oninput = function () {
   progressBar.style.width = this.value + "%";
   speed = slider.value;
-  speed = (100 - speed) * 10;
+  speed = (100 - speed) * 5;
 };
 
 class Queen {
   constructor() {
     this.position = Object.assign({}, pos);
-    // this.Board = 0;
     this.uuid = [];
   }
 
@@ -47,12 +40,10 @@ class Queen {
   };
 
   isValid = async (board, r, col, n) => {
-    //Setting the current box color to orange
     const table = document.getElementById(`table-${this.uuid[board]}`);
     const currentRow = table.firstChild.childNodes[r];
     const currentColumn = currentRow.getElementsByTagName("td")[col];
     currentColumn.innerHTML = queen;
-    // currentColumn.style.backgroundColor = "#FF9F1C";
     await q.delay();
 
     // Checking the queen in the same column
@@ -136,11 +127,9 @@ class Queen {
 
     for (let i = 0; i < n; ++i) {
       await q.delay();
-      // console.log("outside:" + board);
       await q.clearColor(board);
       if (await q.isValid(board, r, i, n)) {
         await q.delay();
-        // console.log("inside:" + board)
         await q.clearColor(board);
         let table = document.getElementById(`table-${this.uuid[board]}`);
         let row = table.firstChild.childNodes[r];
@@ -152,9 +141,7 @@ class Queen {
 
         await q.delay();
         board = Board;
-        // console.log(this.Board)
         table = document.getElementById(`table-${this.uuid[board]}`);
-        // console.log(JSON.parse(JSON.stringify(table)));
         row = table.firstChild.childNodes[r];
         row.getElementsByTagName("td")[i].innerHTML = "-";
 

@@ -65,6 +65,22 @@ class Queen {
       column.style.backgroundColor = "#ffca3a";
       await q.delay();
     }
+
+    for (let i = r - 1, j = col + 1; i >= 0 && j < n; --i, ++j) {
+      const row = table.firstChild.childNodes[i];
+      const column = row.getElementsByTagName("td")[j];
+
+      const value = column.innerHTML;
+
+      if (value == queen) {
+        column.style.backgroundColor = "#FB5607";
+        currentColumn.innerHTML = "-";
+        return false;
+      }
+      column.style.backgroundColor = "#ffca3a";
+      await q.delay();
+    }
+    return true;
   };
 
   clearColor = async (board) => {
@@ -138,12 +154,13 @@ playButton.onclick = async function visualise() {
   } else if (n < 1) {
     numberbox.value = "";
     alert("Too small board size");
-    while (chessBoard.hasChildNodes()) {
-      chessBoard.removeChild(chessBoard.firstChild);
-    }
-    if (arrangement.hasChildNodes()) {
-      arrangement.removeChild(arrangement.lastChild);
-    }
     return;
   }
+  while (chessBoard.hasChildNodes()) {
+    chessBoard.removeChild(chessBoard.firstChild);
+  }
+  if (arrangement.hasChildNodes()) {
+    arrangement.removeChild(arrangement.lastChild);
+  }
+  
 };

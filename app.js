@@ -51,7 +51,7 @@ class Queen {
       await q.delay();
     }
 
-    //diagonal check 
+    //diagonal check
     for (let i = r - 1, j = col - 1; i >= 0 && j >= 0; --i, --j) {
       const row = table.firstChild.childNodes[i];
       const column = row.getElementsByTagName("td")[j];
@@ -138,6 +138,12 @@ playButton.onclick = async function visualise() {
   } else if (n < 1) {
     numberbox.value = "";
     alert("Too small board size");
+    while (chessBoard.hasChildNodes()) {
+      chessBoard.removeChild(chessBoard.firstChild);
+    }
+    if (arrangement.hasChildNodes()) {
+      arrangement.removeChild(arrangement.lastChild);
+    }
     return;
   }
 };
